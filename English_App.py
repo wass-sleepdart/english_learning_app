@@ -22,17 +22,17 @@ def pick_random_word():
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login("simo.rko10@gmail.com", "ervsmhdquwniyguv")
+    server.login("simo.rko10@gmail.com", pwd)
     subject='Your daily English word'
     body= random_word
     msg=f'Subject:{subject}\n \n {body} '
     server.sendmail('simo.rko10@gmail.com','simo.rko10@gmail.com',msg)
     server.sendmail('simo.rko10@gmail.com', 'yas.amel98@gmail.com', msg)
     
-# schedule.every(10).seconds.do(pick_random_word)
-# while True:
-#     schedule.run_pending()
-#     time.sleep(30)
+schedule.every(10).seconds.do(pick_random_word)
+while True:
+     schedule.run_pending()
+     time.sleep(30)
    
 
   
